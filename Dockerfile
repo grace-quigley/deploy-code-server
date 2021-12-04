@@ -27,7 +27,7 @@ RUN sudo chown -R coder:coder /home/coder/.local
 
 # Install apt packages:
 # RUN sudo apt-get install -y ubuntu-make
-RUN sudo npm install -g create-react-app
+
 # Copy files: 
 # COPY deploy-container/myTool /home/coder/myTool
 
@@ -49,3 +49,4 @@ ENTRYPOINT ["/usr/bin/deploy-container-entrypoint.sh"]
 # Install NodeJS
 RUN sudo curl -fsSL https://deb.nodesource.com/setup_15.x | sudo bash -
 RUN sudo apt-get install -y nodejs
+RUN sudo npm install -g create-react-app
