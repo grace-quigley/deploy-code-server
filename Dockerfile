@@ -27,7 +27,7 @@ RUN sudo chown -R coder:coder /home/coder/.local
 
 # Install apt packages:
 # RUN sudo apt-get install -y ubuntu-make
-
+RUN sudo npm install -g create-react-app
 # Copy files: 
 # COPY deploy-container/myTool /home/coder/myTool
 
