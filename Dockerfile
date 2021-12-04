@@ -49,5 +49,3 @@ ENTRYPOINT ["/usr/bin/deploy-container-entrypoint.sh"]
 # Install NodeJS
 RUN sudo curl -fsSL https://deb.nodesource.com/setup_15.x | sudo bash -
 RUN sudo apt-get install -y nodejs
-
-RUN sudo npm install -g create-react-app
