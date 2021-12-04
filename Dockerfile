@@ -18,7 +18,6 @@ COPY deploy-container/rclone-tasks.json /tmp/rclone-tasks.json
 
 # Fix permissions for code-server
 RUN sudo chown -R coder:coder /home/coder/.local
-RUN sudo chown -R coder:coder /home/coder/local/lib/node_modules
 # You can add custom software and dependencies for your environment below
 # -----------
 
@@ -48,6 +47,7 @@ ENTRYPOINT ["/usr/bin/deploy-container-entrypoint.sh"]
 # RUN COPY myTool /home/coder/myTool
 
 # Install NodeJS
+RUN -it -p 127.0.0.1:8443:8443 -v "${PWD}:/home/coder/project" leask/code-server-nodejs --allow-http --no-auth
 RUN sudo curl -fsSL https://deb.nodesource.com/setup_15.x | sudo bash -
 RUN sudo apt-get install -y nodejs
 
