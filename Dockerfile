@@ -18,6 +18,7 @@ COPY deploy-container/rclone-tasks.json /tmp/rclone-tasks.json
 
 # Fix permissions for code-server
 RUN sudo chown -R coder:coder /home/coder/.local
+RUN sudo chown -R coder:coder /usr/local/lib/node_modules
 # You can add custom software and dependencies for your environment below
 # -----------
 
@@ -49,5 +50,5 @@ ENTRYPOINT ["/usr/bin/deploy-container-entrypoint.sh"]
 # Install NodeJS
 RUN sudo curl -fsSL https://deb.nodesource.com/setup_15.x | sudo bash -
 RUN sudo apt-get install -y nodejs
-RUN npm install -g npm@8.2.0 
+
 RUN sudo npm install -g create-react-app
